@@ -1,0 +1,51 @@
+<view class="page-box">
+
+  <view class="swiper-box">
+
+    <!-- 轮播图 开始 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="true">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播图结束 -->
+
+  </view>
+
+  <!-- 文字导航 开始 -->  
+  <view class="nav-box">
+    <scroll-view scroll-x="true">
+      <view class="nav">
+          <view class="item current">全部</view>
+          <view class="item">家具</view>
+          <view class="item">男装</view>
+          <view class="item">女装</view>
+          <view class="item">童装</view>
+          <view class="item">电脑</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 文字导航结束 -->
+
+  <!-- 列表开始 -->
+  <view class="goods-list">
+
+    <view class="item" wx:for="{{list}}" data-goodsid="{{item.goods_id}}" bindtap="goodsDetail">
+      <view class="img">
+        <image src="{{item.goods_img}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{item.goods_name}}</view>
+        <view class="brand">Nokia</view>
+        <view class="price"> $ {{item.shop_price}} </view>
+      </view>
+    </view>
+
+
+  </view>
+  <!-- 列表结束 -->
+
+</view>

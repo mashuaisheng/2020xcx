@@ -1,0 +1,15 @@
+
+<view class="goods-list">
+  <view wx:for="{{data}}">
+    <view class="img">
+      <image src="{{item.goods_img}}"></image>
+    </view>
+    <view class="content">
+      <view class="title">{{item.goods_name}}</view>
+      <view class="brand">{{item.add_time}}</view>
+      <view class="price"> $ {{item.shop_price}} </view>
+    </view>
+  </view>
+<button>加入购物车</button>
+</view>
+<!-- 列表结束 -->

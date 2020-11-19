@@ -19,11 +19,38 @@ Page({
             url: 'http://shop.2004.com/api/onLogin',
             data: {
               code: res.code
+            },
+            success:function(d)
+            {
+              console.log(d.data.data)
+              //获取登录token
+              wx.setStorage({
+                key:"token",
+                data:d.data.data
+              })
+
+              let token=wx.getStorage({
+                key: 'token',
+                success(res){
+                  console.log(res.data)
+                }
+              })
+
             }
           })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
+      }
+    })
+  },
+  //获取storage
+  loginInfo:function(e)
+  {
+    let s = wx.setStorage({
+      key: 'token',
+      success(res){
+        console.log(wx.getStorageSync('token'))  
       }
     })
   },

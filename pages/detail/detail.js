@@ -1,4 +1,4 @@
-// pages/set/set.js
+// pages/detail/detail.js
 Page({
 
   /**
@@ -12,7 +12,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let _this = this;
+    
+    //获取商品信息
+    wx.request({
+      url: 'http://shop.2004.com/api/list',
+      data: {
+        goods_id:options.goods_id
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res){
+        console.log(this)
+        _this.setData({
+          data:res.data
+        })
+      }
+    })
   },
 
   /**

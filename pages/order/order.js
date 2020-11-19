@@ -1,4 +1,4 @@
-// pages/ceshi/ceshi.js
+// pages/order/order.js
 Page({
 
   /**
